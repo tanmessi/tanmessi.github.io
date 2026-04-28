@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Chuyên gia CNTT & Sáng tạo nội dung số</title>
+    <style>
+        /* CSS Gốc - Style Hiện đại */
+        :root {
+            --primary-color: #2563eb; /* Xanh công nghệ */
+            --secondary-color: #7c3aed; /* Tím sáng tạo */
+            --dark-bg: #0f172a;
+            --light-text: #f8fafc;
+            --accent-color: #38bdf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header & Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--accent-color), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Container chung */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Kỹ năng - Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Dự án - Layout */
+        .project-item {
+            background: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 0 15px 15px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-top: 10px;
+        }
+
+        /* Nút kêu gọi hành động */
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1>[Họ và Tên của bạn]</h1>
+            <p>Full-stack Developer & Digital Creative Designer</p>
+            <p>Biến ý tưởng thành sản phẩm công nghệ thực thụ qua mã nguồn và hình ảnh.</p>
+            <a href="#contact" class="cta-btn">Hợp tác ngay</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="skills">
+            <h2>Kỹ năng chuyên môn</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Lập trình & Hệ thống</h3>
+                    <p>Xây dựng Backend vững chắc với <b>.NET Entity Framework Core</b>, quản lý dữ liệu SQL và tối ưu hóa <b>HTML/CSS</b> cho trải nghiệm người dùng.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Thiết kế & Canva</h3>
+                    <p>Sáng tạo <b>Logo, Branding, Video Marketing</b> và các ấn phẩm truyền thông bằng Canva với tư duy thẩm mỹ hiện đại.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Giải pháp số</h3>
+                    <p>Kinh nghiệm triển khai <b>Landing Page</b>, các hệ thống chuyển đổi số hành chính và quản lý bất động sản cho thuê.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" style="margin-top: 80px;">
+            <h2>Dự án tiêu biểu</h2>
+            
+            <div class="project-item">
+                <h3>Hệ sinh thái VNPT (Portal, AI, Green)</h3>
+                <p>Tham gia phát triển các giải pháp số hóa cấp cơ sở, tích hợp AI và cổng thông tin hành chính công.</p>
+                <span class="tag">.NET</span> <span class="tag">SQL</span> <span class="tag">UX/UI</span>
+            </div>
+
+            <div class="project-item">
+                <h3>Dự án Phú Lợi Số</h3>
+                <p>Xây dựng ứng dụng kết nối chính quyền và người dân, tối ưu hóa quy trình báo cáo và giám sát.</p>
+                <span class="tag">Web App</span> <span class="tag">Digital Governance</span>
+            </div>
+
+            <div class="project-item">
+                <h3>Nhà trọ Phúc Nguyên 1 - Branding</h3>
+                <p>Thiết kế trọn bộ nhận diện thương hiệu, video quảng cáo và hệ thống quản lý vận hành từ xa.</p>
+                <span class="tag">Canva</span> <span class="tag">Marketing Video</span>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h2>Liên hệ</h2>
+        <p>Email: your-email@example.com</p>
+        <p>Số điện thoại: 0xx xxx xxxx</p>
+        <p>Địa điểm: Cần Thơ, Việt Nam</p>
+        <div style="margin-top: 20px;">
+            <p>© 2026 Crafted with ❤️ by [Họ tên của bạn]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
