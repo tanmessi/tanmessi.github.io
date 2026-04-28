@@ -3,213 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Chuyên gia CNTT & Sáng tạo nội dung số</title>
-    <style>
-        /* CSS Gốc - Style Hiện đại */
-        :root {
-            --primary-color: #2563eb; /* Xanh công nghệ */
-            --secondary-color: #7c3aed; /* Tím sáng tạo */
-            --dark-bg: #0f172a;
-            --light-text: #f8fafc;
-            --accent-color: #38bdf8;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f1f5f9;
-            color: #1e293b;
-            line-height: 1.6;
-        }
-
-        /* Header & Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, var(--accent-color), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        /* Container chung */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-
-        /* Kỹ năng - Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Dự án - Layout */
-        .project-item {
-            background: white;
-            margin-bottom: 30px;
-            padding: 25px;
-            border-left: 5px solid var(--secondary-color);
-            border-radius: 0 15px 15px 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #e2e8f0;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-top: 10px;
-        }
-
-        /* Nút kêu gọi hành động */
-        .cta-btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .cta-btn:hover {
-            background: #1d4ed8;
-        }
-
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-        }
-    </style>
+    <title>Phạm Lê Tân | Portfolio Chuyên Gia Công Nghệ & Sáng Tạo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <div class="hero-content">
-            <h1>PHẠM LÊ TÂN</h1>
-            <p>Full-stack Developer & Digital Creative Designer</p>
-            <p>Biến ý tưởng thành sản phẩm công nghệ thực thụ qua mã nguồn và hình ảnh.</p>
-            <a href="#contact" class="cta-btn">Hợp tác ngay</a>
+    <nav>
+        <div class="logo">TAN.DEV</div>
+        <ul class="nav-links">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero-badge">Sẵn sàng cho các dự án Chuyển đổi số 2026</div>
+        <h1>Phạm Lê Tân</h1>
+        <p>Software Developer tại <b>VNPT</b> & Creative Designer. Chuyên xây dựng các giải pháp web hiện đại và bộ nhận diện thương hiệu chuyên nghiệp.</p>
+        <div style="margin-top: 20px;">
+            <a href="#projects" class="btn">Khám phá dự án</a>
+            <a href="tel:0849777575" class="btn" style="background: transparent; border: 1px solid var(--primary); color: var(--primary); margin-left: 10px;">Gọi cho tôi</a>
         </div>
     </header>
 
-    <div class="container">
-        <section id="skills">
-            <h2>Kỹ năng chuyên môn</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Lập trình & Hệ thống</h3>
-                    <p>Xây dựng Backend vững chắc với <b>.NET Entity Framework Core</b>, quản lý dữ liệu SQL và tối ưu hóa <b>HTML/CSS</b> cho trải nghiệm người dùng.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Thiết kế & Canva</h3>
-                    <p>Sáng tạo <b>Logo, Branding, Video Marketing</b> và các ấn phẩm truyền thông bằng Canva với tư duy thẩm mỹ hiện đại.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Giải pháp số</h3>
-                    <p>Kinh nghiệm triển khai <b>Landing Page</b>, các hệ thống chuyển đổi số hành chính và quản lý bất động sản cho thuê.</p>
+    <section id="skills" class="reveal">
+        <h2 class="section-title">Năng lực cốt lõi</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Lập trình Hệ thống</h3>
+                <p>Thành thạo .NET Entity Framework Core, SQL Server và xây dựng API cho các hệ thống doanh nghiệp lớn.</p>
+                <div class="tag-container">
+                    <span class="tag">.NET</span> <span class="tag">Backend</span> <span class="tag">SQL</span>
                 </div>
             </div>
-        </section>
-
-        <section id="projects" style="margin-top: 80px;">
-            <h2>Dự án tiêu biểu</h2>
-            
-            <div class="project-item">
-                <h3>Hệ sinh thái VNPT (Portal, AI, Green)</h3>
-                <p>Tham gia phát triển các giải pháp số hóa cấp cơ sở, tích hợp AI và cổng thông tin hành chính công.</p>
-                <span class="tag">.NET</span> <span class="tag">SQL</span> <span class="tag">UX/UI</span>
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Thiết kế & Media</h3>
+                <p>Sáng tạo Logo, Banner và Video Cinematic qua Canva Pro. Tư duy thẩm mỹ hiện đại, chuẩn UI/UX.</p>
+                <div class="tag-container">
+                    <span class="tag">Canva</span> <span class="tag">Branding</span> <span class="tag">Video</span>
+                </div>
             </div>
-
-            <div class="project-item">
-                <h3>Dự án Phú Lợi Số</h3>
-                <p>Xây dựng ứng dụng kết nối chính quyền và người dân, tối ưu hóa quy trình báo cáo và giám sát.</p>
-                <span class="tag">Web App</span> <span class="tag">Digital Governance</span>
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Phát triển Web</h3>
+                <p>Tối ưu hóa giao diện với HTML5/CSS3 chuẩn SEO. Đảm bảo tốc độ tải trang và tương thích đa thiết bị.</p>
+                <div class="tag-container">
+                    <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JS</span>
+                </div>
             </div>
-
-            <div class="project-item">
-                <h3>Nhà trọ Phúc Nguyên 1 - Branding</h3>
-                <p>Thiết kế trọn bộ nhận diện thương hiệu, video quảng cáo và hệ thống quản lý vận hành từ xa.</p>
-                <span class="tag">Canva</span> <span class="tag">Marketing Video</span>
-            </div>
-        </section>
-    </div>
-
-    <footer id="contact">
-        <h2>Liên hệ</h2>
-        <p>Email: tanpl.cto@gmail.com</p>
-        <p>Số điện thoại: 0849 77 75 75</p>
-        <p>Địa điểm: Cần Thơ, Việt Nam</p>
-        <div style="margin-top: 20px;">
-            <p>© 2026 Crafted with ❤️ by TanPham</p>
         </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2 class="section-title">Dự án tiêu biểu</h2>
+        <div class="grid">
+            <div class="card project-card">
+                <h3>VNPT Digital Ecosystem</h3>
+                <p>Đóng góp phát triển VNPT Portal, VNPT AI và VNPT Green - các giải pháp trọng điểm về Chính quyền điện tử.</p>
+                <div class="tag-container">
+                    <span class="tag">VNPT</span> <span class="tag">Chuyển đổi số</span>
+                </div>
+            </div>
+            <div class="card project-card">
+                <h3>Ứng dụng Phú Lợi Số</h3>
+                <p>Phát triển nền tảng kết nối Chính quyền và Người dân tại địa phương, tăng tính minh bạch và hiệu quả hành chính.</p>
+                <div class="tag-container">
+                    <span class="tag">Cần Thơ</span> <span class="tag">Smart City</span>
+                </div>
+            </div>
+            <div class="card project-card">
+                <h3>Nhà trọ Phúc Nguyên 1</h3>
+                <p>Xây dựng hệ thống quản lý và chiến lược marketing số hóa toàn diện cho mô hình kinh doanh lưu trú.</p>
+                <div class="tag-container">
+                    <span class="tag">Management</span> <span class="tag">Creative</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <div class="contact-box">
+            <h2>Hợp tác cùng Tân?</h2>
+            <p>Tôi luôn sẵn sàng thảo luận về các giải pháp công nghệ và thiết kế sáng tạo.</p>
+            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                <a href="tel:0849777575" class="btn" style="width: fit-content;">📞 0849.777.575</a>
+                <a href="mailto:tanpl.cto@gmail.com" class="btn" style="background: #21262d; border: 1px solid #30363d; width: fit-content;">✉️ Gửi Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Crafted by Phạm Lê Tân. Powered by GitHub Pages.</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
