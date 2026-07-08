@@ -4,42 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phạm Lê Tân | Solution Consultant & Business Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Phạm Lê Tân - Chuyên gia Tư vấn Giải pháp & Phân tích Nghiệp vụ (BA). Tư vấn lộ trình chuyển đổi số toàn diện cho doanh nghiệp và tổ chức hành chính công.">
+    <meta name="author" content="Phạm Lê Tân">
+    <meta name="theme-color" content="#0d1117">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Phạm Lê Tân | Solution Consultant & Business Analyst">
+    <meta property="og:description" content="Chuyên gia tư vấn lộ trình chuyển đổi số toàn diện cho doanh nghiệp và tổ chức hành chính công.">
+    <meta property="og:image" content="assets/img/anh2.jpg">
+
+    <link rel="icon" href="assets/img/anh2.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">TAN.SOLUTIONS</div>
-        <ul class="nav-links">
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav id="navbar">
+        <a href="#home" class="logo">TAN<span>.SOLUTIONS</span></a>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Trang chủ</a></li>
             <li><a href="#consulting">Tư vấn</a></li>
             <li><a href="#projects">Dự án</a></li>
             <li><a href="#contact">Liên hệ</a></li>
         </ul>
+        <a href="#contact" class="nav-cta">Liên hệ ngay</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <header id="home">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-glow"></div>
+            <div class="hero-grid"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">Digital Transformation Expert 2026</div>
-                <h1>Phạm Lê Tân</h1>
-                <p class="hero-subtitle">Business Analyst | Solution Consultant</p>
-                <p class="hero-description">Bachelor of Engineering & Business Administration. Chuyên gia tư vấn lộ trình chuyển đổi số toàn diện cho doanh nghiệp và tổ chức hành chính công.</p>
+                <div class="hero-badge"><span class="pulse-dot"></span>Digital Transformation Expert 2026</div>
+                <h1>Phạm Lê <span class="gradient-text">Tân</span></h1>
+                <p class="hero-subtitle">Business Analyst <span class="sep">|</span> Solution Consultant</p>
+                <p class="hero-description">Bachelor of Engineering &amp; Business Administration. Chuyên gia tư vấn lộ trình chuyển đổi số toàn diện cho doanh nghiệp và tổ chức hành chính công.</p>
                 <div class="hero-btns">
-                    <a href="#contact" class="btn">Kết nối tư vấn</a>
-                    <a href="tel:0849777575" class="btn btn-outline">📞 0849.777.575</a>
+                    <a href="#contact" class="btn">Kết nối tư vấn <i class="fas fa-arrow-right"></i></a>
+                    <a href="tel:0849777575" class="btn btn-outline"><i class="fas fa-phone"></i> 0849.777.575</a>
+                </div>
+                <div class="hero-tech">
+                    <span>Chuyển đổi số</span>
+                    <span>Chính quyền số</span>
+                    <span>Business Analysis</span>
+                    <span>AI Solutions</span>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/img/anh2.jpg" alt="Phạm Lê Tân - Người vẽ đường cho giải pháp" loading="eager">
+                <div class="hero-image-frame">
+                    <img src="assets/img/anh2.jpg" alt="Phạm Lê Tân - Người vẽ đường cho giải pháp" loading="eager">
+                </div>
+                <div class="hero-float-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Sẵn sàng hợp tác</strong>
+                        <small>Tư vấn giải pháp CNTT</small>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
+    <section class="stats-section reveal">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number" data-target="6" data-suffix="+">0</div>
+                <div class="stat-label">Năm kinh nghiệm</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                <div class="stat-label">Dự án triển khai</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" data-target="15" data-suffix="+">0</div>
+                <div class="stat-label">Tổ chức &amp; Doanh nghiệp</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                <div class="stat-label">Tận tâm với khách hàng</div>
+            </div>
+        </div>
+    </section>
+
     <section id="consulting" class="reveal">
-        <h2 class="section-title">Năng lực Tư vấn</h2>
+        <div class="section-head">
+            <span class="section-tagline">Năng lực cốt lõi</span>
+            <h2 class="section-title">Năng lực Tư vấn</h2>
+            <p class="section-desc">Đồng hành cùng doanh nghiệp và tổ chức trên hành trình chuyển đổi số bền vững.</p>
+        </div>
         <div class="grid">
             <div class="card">
                 <div class="card-icon">🎯</div>
@@ -60,55 +122,75 @@
     </section>
 
     <section id="projects" class="reveal">
-        <h2 class="section-title">Dự án Thực chiến</h2>
+        <div class="section-head">
+            <span class="section-tagline">Portfolio</span>
+            <h2 class="section-title">Dự án Thực chiến</h2>
+            <p class="section-desc">Những giải pháp đã được triển khai và tạo ra giá trị thực tế.</p>
+        </div>
         <div class="grid">
             <div class="card project-card">
                 <div class="project-thumb">
                     <img src="assets/img/anh3.png" alt="Phạm Lê Tân - Chuyên viên Tư vấn Giải pháp CNTT VNPT" loading="lazy">
+                    <span class="tag tag-active">Key Project</span>
                 </div>
-                <span class="tag tag-active">Key Project</span>
-                <h3>Hệ sinh thái VNPT (Portal, AI, Green)</h3>
-                <p>Chủ trì tư vấn và phát triển các giải pháp trọng điểm hỗ trợ chính quyền điện tử và bảo vệ môi trường.</p>
+                <div class="project-body">
+                    <h3>Hệ sinh thái VNPT (Portal, AI, Green)</h3>
+                    <p>Chủ trì tư vấn và phát triển các giải pháp trọng điểm hỗ trợ chính quyền điện tử và bảo vệ môi trường.</p>
+                </div>
             </div>
             <div class="card project-card">
                 <div class="project-thumb">
                     <img src="assets/img/anh1.jpg" alt="Thốt Nốt - Cần Thơ" loading="lazy">
+                    <span class="tag">Local Gov</span>
                 </div>
-                <h3>Phú Lợi Số (Local Gov App)</h3>
-                <p>Nền tảng kết nối trực tiếp chính quyền Cần Thơ và người dân, tối ưu hóa quy trình báo cáo và phản ánh hiện trường.</p>
+                <div class="project-body">
+                    <h3>Phú Lợi Số (Local Gov App)</h3>
+                    <p>Nền tảng kết nối trực tiếp chính quyền Cần Thơ và người dân, tối ưu hóa quy trình báo cáo và phản ánh hiện trường.</p>
+                </div>
             </div>
             <div class="card project-card">
-                <h3>Số hóa Sở KH&CN & iOffice</h3>
-                <p>Triển khai văn phòng điện tử thông minh, giảm thiểu thủ tục giấy tờ và nâng cao hiệu suất làm việc khối giáo dục.</p>
+                <div class="project-body">
+                    <div class="project-icon">🗂️</div>
+                    <h3>Số hóa Sở KH&amp;CN &amp; iOffice</h3>
+                    <p>Triển khai văn phòng điện tử thông minh, giảm thiểu thủ tục giấy tờ và nâng cao hiệu suất làm việc khối giáo dục.</p>
+                </div>
             </div>
             <div class="card project-card">
-                <h3>Nhà trọ Phúc Nguyên 1</h3>
-                <p>Ứng dụng mô hình quản trị số và Marketing đa nền tảng (TikTok, YouTube) vào kinh doanh dịch vụ lưu trú.</p>
+                <div class="project-body">
+                    <div class="project-icon">🏠</div>
+                    <h3>Nhà trọ Phúc Nguyên 1</h3>
+                    <p>Ứng dụng mô hình quản trị số và Marketing đa nền tảng (TikTok, YouTube) vào kinh doanh dịch vụ lưu trú.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="reveal">
         <div class="contact-box">
+            <span class="section-tagline">Kết nối</span>
             <h2>Hợp tác cùng Tân</h2>
             <p>Liên hệ để thảo luận về các giải pháp tối ưu cho tổ chức của bạn.</p>
-            
+
             <div class="contact-main">
-                <a href="tel:0849777575" class="btn">📞 Gọi: 0849.777.575</a>
-                <a href="https://zalo.me/0849777575" class="btn" style="background: #0068ff;">💬 Chat Zalo</a>
+                <a href="tel:0849777575" class="btn"><i class="fas fa-phone"></i> Gọi: 0849.777.575</a>
+                <a href="https://zalo.me/0849777575" class="btn btn-zalo"><i class="fas fa-comment-dots"></i> Chat Zalo</a>
             </div>
 
             <div class="social-links">
-                <a href="https://www.facebook.com/share/14d8u618WEZ/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.tiktok.com/@cristianphamle?_r=1&_t=ZS-95wLcS9i7oi" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/@TanPhamDay" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/share/14d8u618WEZ/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@cristianphamle?_r=1&_t=ZS-95wLcS9i7oi" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@TanPhamDay" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Phạm Lê Tân | Solution Consultant & Business Analyst</p>
+        <div class="footer-logo">TAN<span>.SOLUTIONS</span></div>
+        <p>© 2026 Phạm Lê Tân | Solution Consultant &amp; Business Analyst</p>
+        <p class="footer-tagline">Người vẽ đường cho giải pháp.</p>
     </footer>
+
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Lên đầu trang"><i class="fas fa-arrow-up"></i></a>
 
     <script src="js/script.js"></script>
 </body>
