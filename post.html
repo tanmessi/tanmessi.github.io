@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết | Phạm Lê Tân</title>
+    <meta name="description" content="Bài viết blog từ Phạm Lê Tân.">
+    <meta name="theme-color" content="#0d1117">
+
+    <link rel="icon" href="assets/img/anh2.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav id="navbar">
+        <a href="index.html#home" class="logo">TAN<span>.SOLUTIONS</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Trang chủ</a></li>
+            <li><a href="index.html#consulting">Tư vấn</a></li>
+            <li><a href="index.html#projects">Dự án</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="index.html#contact">Liên hệ</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav-cta">Liên hệ ngay</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main class="post-main" id="postMain">
+        <!-- Nội dung bài viết được render bằng JS -->
+    </main>
+
+    <footer>
+        <div class="footer-logo">TAN<span>.SOLUTIONS</span></div>
+        <p>© 2026 Phạm Lê Tân | Solution Consultant &amp; Business Analyst</p>
+        <p class="footer-tagline">Người vẽ đường cho giải pháp.</p>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Lên đầu trang"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="js/blog-data.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>
