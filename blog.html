@@ -33,32 +33,92 @@
         </button>
     </nav>
 
-    <header class="blog-hero">
-        <div class="hero-bg" aria-hidden="true">
-            <div class="hero-glow"></div>
-            <div class="hero-grid"></div>
+    <div class="fb-cover">
+        <div class="fb-cover-photo" aria-hidden="true"></div>
+        <div class="fb-cover-bar">
+            <img class="fb-cover-avatar" src="assets/img/anh2.jpg" alt="Phạm Lê Tân">
+            <div class="fb-cover-info">
+                <h1>Phạm Lê Tân <i class="fas fa-circle-check" title="Đã xác minh"></i></h1>
+                <p>Solution Consultant &amp; Business Analyst · Bảng tin Công nghệ</p>
+            </div>
+            <div class="fb-cover-actions">
+                <a href="index.html#contact" class="fb-cover-btn fb-cover-btn-primary"><i class="fas fa-plus"></i> Kết nối</a>
+                <a href="https://zalo.me/0849777575" class="fb-cover-btn"><i class="fas fa-comment-dots"></i> Nhắn tin</a>
+            </div>
         </div>
-        <div class="blog-hero-content">
-            <span class="section-tagline">Blog &amp; Insights</span>
-            <h1>Tin tức &amp; <span class="gradient-text">Công nghệ</span></h1>
-            <p>Chia sẻ góc nhìn về chuyển đổi số, trí tuệ nhân tạo, phân tích nghiệp vụ và những xu hướng công nghệ mới nhất.</p>
-        </div>
-    </header>
+    </div>
 
-    <main class="blog-main">
-        <div class="blog-toolbar">
-            <div class="blog-filters" id="blogFilters"></div>
-            <div class="blog-search">
-                <i class="fas fa-magnifying-glass"></i>
-                <input type="search" id="blogSearch" placeholder="Tìm bài viết...">
+    <main class="fb-layout">
+        <!-- Cột trái: hồ sơ + liên kết nhanh -->
+        <aside class="fb-side fb-side-left">
+            <div class="fb-profile-card">
+                <div class="fb-profile-cover"></div>
+                <img class="fb-profile-avatar" src="assets/img/anh2.jpg" alt="Phạm Lê Tân">
+                <h3 class="fb-profile-name">Phạm Lê Tân <i class="fas fa-circle-check" title="Đã xác minh"></i></h3>
+                <p class="fb-profile-role">Solution Consultant &amp; Business Analyst</p>
+                <div class="fb-quicknav">
+                    <a href="index.html#home"><i class="fas fa-house"></i> Trang chủ</a>
+                    <a href="index.html#consulting"><i class="fas fa-lightbulb"></i> Năng lực tư vấn</a>
+                    <a href="index.html#projects"><i class="fas fa-folder-open"></i> Dự án</a>
+                    <a href="blog.html" class="active"><i class="fas fa-newspaper"></i> Bảng tin</a>
+                    <a href="index.html#contact"><i class="fas fa-envelope"></i> Liên hệ</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Cột giữa: bảng tin -->
+        <div class="fb-center">
+            <!-- Ô soạn nhanh (composer) kiểu Facebook -->
+            <div class="fb-composer">
+                <div class="fb-composer-top">
+                    <img class="fb-composer-avatar" src="assets/img/anh2.jpg" alt="Phạm Lê Tân">
+                    <a href="index.html#contact" class="fb-composer-input">Bạn cần tư vấn giải pháp chuyển đổi số? Đặt lịch ngay…</a>
+                </div>
+                <div class="fb-composer-actions">
+                    <a href="tel:0849777575"><i class="fas fa-phone-volume"></i> Gọi tư vấn</a>
+                    <a href="https://zalo.me/0849777575"><i class="fas fa-comment-dots"></i> Chat Zalo</a>
+                    <a href="index.html#contact"><i class="fas fa-paper-plane"></i> Gửi yêu cầu</a>
+                </div>
+            </div>
+
+            <div class="blog-toolbar">
+                <div class="blog-filters" id="blogFilters"></div>
+                <div class="blog-search">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <input type="search" id="blogSearch" placeholder="Tìm bài viết...">
+                </div>
+            </div>
+
+            <div class="blog-grid" id="blogGrid"></div>
+            <div class="blog-empty" id="blogEmpty" hidden>
+                <i class="fas fa-inbox"></i>
+                <p>Không tìm thấy bài viết phù hợp.</p>
             </div>
         </div>
 
-        <div class="blog-grid" id="blogGrid"></div>
-        <div class="blog-empty" id="blogEmpty" hidden>
-            <i class="fas fa-inbox"></i>
-            <p>Không tìm thấy bài viết phù hợp.</p>
-        </div>
+        <!-- Cột phải: giới thiệu + liên hệ -->
+        <aside class="fb-side fb-side-right">
+            <div class="fb-widget">
+                <h4 class="fb-widget-title">Giới thiệu</h4>
+                <p class="fb-widget-text">Chuyên gia tư vấn lộ trình chuyển đổi số toàn diện cho doanh nghiệp và tổ chức hành chính công.</p>
+                <ul class="fb-widget-list">
+                    <li><i class="fas fa-briefcase"></i> 6+ năm kinh nghiệm</li>
+                    <li><i class="fas fa-diagram-project"></i> 20+ dự án triển khai</li>
+                    <li><i class="fas fa-graduation-cap"></i> Kỹ sư &amp; Thạc sĩ HTTT</li>
+                </ul>
+            </div>
+
+            <div class="fb-widget">
+                <h4 class="fb-widget-title">Kết nối tư vấn</h4>
+                <a href="tel:0849777575" class="fb-widget-btn"><i class="fas fa-phone"></i> 0849.777.575</a>
+                <a href="https://zalo.me/0849777575" class="fb-widget-btn fb-widget-btn-zalo"><i class="fas fa-comment-dots"></i> Chat Zalo</a>
+                <div class="fb-widget-social">
+                    <a href="https://www.facebook.com/share/14d8u618WEZ/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@cristianphamle?_r=1&_t=ZS-95wLcS9i7oi" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@TanPhamDay" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </aside>
     </main>
 
     <footer>

@@ -93,23 +93,7 @@ function renderPosts() {
     }
     emptyState.hidden = true;
 
-    grid.innerHTML = posts.map(p => `
-        <a class="blog-card" href="post.html?id=${encodeURIComponent(p.id)}">
-            <div class="blog-card-thumb">
-                <img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy">
-                <span class="tag tag-active">${escapeHtml(p.category)}</span>
-            </div>
-            <div class="blog-card-body">
-                <div class="blog-card-meta">
-                    <span><i class="fas fa-calendar-day"></i> ${formatDate(p.date)}</span>
-                    <span><i class="fas fa-user-pen"></i> ${escapeHtml(p.author || "Phạm Lê Tân")}</span>
-                </div>
-                <h3>${escapeHtml(p.title)}</h3>
-                <p>${escapeHtml(p.excerpt)}</p>
-                <span class="blog-card-more">Đọc tiếp <i class="fas fa-arrow-right"></i></span>
-            </div>
-        </a>
-    `).join("");
+    grid.innerHTML = posts.map(p => renderFbFeedCard(p)).join("");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

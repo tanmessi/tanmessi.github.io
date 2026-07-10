@@ -77,44 +77,43 @@ function renderPost() {
         <section class="post-related">
             <h2 class="section-title">Bài viết liên quan</h2>
             <div class="blog-grid">
-                ${related.map(p => `
-                    <a class="blog-card" href="post.html?id=${encodeURIComponent(p.id)}">
-                        <div class="blog-card-thumb">
-                            <img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy">
-                            <span class="tag tag-active">${escapeHtml(p.category)}</span>
-                        </div>
-                        <div class="blog-card-body">
-                            <div class="blog-card-meta"><span><i class="fas fa-calendar-day"></i> ${formatDate(p.date)}</span></div>
-                            <h3>${escapeHtml(p.title)}</h3>
-                            <p>${escapeHtml(p.excerpt)}</p>
-                            <span class="blog-card-more">Đọc tiếp <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>`).join("")}
+                ${related.map(p => renderFbFeedCard(p)).join("")}
             </div>
         </section>` : "";
 
     const shareUrl = encodeURIComponent(window.location.href);
+    const eng = (typeof fbEngagement === "function") ? fbEngagement(post.id) : { likes: 0, comments: 0, shares: 0 };
+    const dateLabel = (typeof fbRelativeDate === "function") ? fbRelativeDate(post.date) : formatDate(post.date);
 
     container.innerHTML = `
+        <a class="post-back" href="blog.html"><i class="fas fa-arrow-left"></i> Bảng tin</a>
         <article class="post-article">
-            <a class="post-back" href="blog.html"><i class="fas fa-arrow-left"></i> Tất cả bài viết</a>
-            <span class="tag tag-active post-cat">${escapeHtml(post.category)}</span>
-            <h1 class="post-title">${escapeHtml(post.title)}</h1>
-            <div class="post-meta">
-                <span><i class="fas fa-user-pen"></i> ${escapeHtml(post.author || "Phạm Lê Tân")}</span>
-                <span><i class="fas fa-calendar-day"></i> ${formatDate(post.date)}</span>
-                <span><i class="fas fa-clock"></i> ${readingTime(post.content)} phút đọc</span>
+            <div class="post-fb-head">
+                <img class="fb-avatar" src="assets/img/anh2.jpg" alt="${escapeHtml(post.author || "Phạm Lê Tân")}">
+                <div class="post-fb-headinfo">
+                    <span class="fb-author">${escapeHtml(post.author || "Phạm Lê Tân")}<i class="fas fa-circle-check" title="Đã xác minh"></i></span>
+                    <span class="fb-post-time">${dateLabel} · <span class="fb-cat-chip">${escapeHtml(post.category)}</span> · <i class="fas fa-clock"></i> ${readingTime(post.content)} phút đọc · <i class="fas fa-earth-asia"></i></span>
+                </div>
+                <button class="fb-post-more" type="button" aria-label="Tùy chọn"><i class="fas fa-ellipsis"></i></button>
             </div>
+
+            <h1 class="post-title">${escapeHtml(post.title)}</h1>
             <div class="post-cover">
                 <img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">
             </div>
             <div class="post-content">${post.content}</div>
 
+            <div class="post-stats">
+                <span class="fb-react-icons"><i class="fb-r">👍</i><i class="fb-r">❤️</i><i class="fb-r">😆</i></span>
+                <span class="fb-stats-count">${eng.likes.toLocaleString("vi-VN")}</span>
+                <span class="fb-stats-right">${eng.comments} bình luận · ${eng.shares} lượt chia sẻ</span>
+            </div>
+
             <div class="post-share">
-                <span>Chia sẻ:</span>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/intent/tweet?url=${shareUrl}" target="_blank" rel="noopener" title="X"><i class="fab fa-x-twitter"></i></a>
-                <button id="copyLink" title="Sao chép liên kết"><i class="fas fa-link"></i></button>
+                <button class="fb-act-like" type="button"><i class="far fa-thumbs-up"></i> Thích</button>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=${shareUrl}" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> Đăng lại</a>
+                <button id="copyLink" type="button"><i class="fas fa-link"></i> Sao chép</button>
             </div>
         </article>
         ${relatedHtml}
@@ -125,8 +124,8 @@ function renderPost() {
         copyBtn.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(window.location.href);
-                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-link"></i>'; }, 1500);
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Đã sao chép';
+                setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-link"></i> Sao chép'; }, 1500);
             } catch (e) { /* clipboard không khả dụng */ }
         });
     }

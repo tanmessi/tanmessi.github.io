@@ -117,3 +117,90 @@ const BLOG_POSTS = [
         `
     }
 ];
+
+/* ============================================================
+ *  NEWS FEED (phong cách Facebook) - Hàm render dùng chung
+ *  Dùng cho: trang chủ (Bài viết mới nhất), blog.html, post.html
+ * ============================================================ */
+const FB_AUTHOR_AVATAR = "assets/img/anh2.jpg";
+
+function fbEscape(str) {
+    return String(str).replace(/[&<>"']/g, s => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[s]));
+}
+
+function fbRelativeDate(iso) {
+    const d = new Date(iso);
+    if (isNaN(d)) return iso;
+    const now = new Date();
+    const diff = Math.floor((now - d) / 86400000); // số ngày
+    if (diff <= 0) return "Hôm nay";
+    if (diff === 1) return "Hôm qua";
+    if (diff < 7) return diff + " ngày trước";
+    if (diff < 30) return Math.floor(diff / 7) + " tuần trước";
+    return d.toLocaleDateString("vi-VN", { day: "2-digit", month: "long", year: "numeric" });
+}
+
+// Sinh số tương tác ổn định theo id (không đổi mỗi lần tải trang)
+function fbEngagement(id) {
+    let h = 0;
+    for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+    return {
+        likes: 45 + (h % 320),
+        comments: 3 + (h % 47),
+        shares: 1 + (h % 19)
+    };
+}
+
+// Render 1 bài viết dưới dạng "post" Facebook
+function renderFbFeedCard(p, opts = {}) {
+    const url = `post.html?id=${encodeURIComponent(p.id)}`;
+    const eng = fbEngagement(p.id);
+    const author = fbEscape(p.author || "Phạm Lê Tân");
+    const media = p.image ? `
+            <a class="fb-post-media" href="${url}" aria-label="${fbEscape(p.title)}">
+                <img src="${fbEscape(p.image)}" alt="${fbEscape(p.title)}" loading="lazy">
+            </a>` : "";
+
+    return `
+        <article class="fb-post" data-post-id="${fbEscape(p.id)}">
+            <div class="fb-post-head">
+                <img class="fb-avatar" src="${fbEscape(FB_AUTHOR_AVATAR)}" alt="${author}">
+                <div class="fb-post-headinfo">
+                    <span class="fb-author">${author}<i class="fas fa-circle-check" title="Đã xác minh"></i></span>
+                    <span class="fb-post-time">${fbRelativeDate(p.date)} · <span class="fb-cat-chip">${fbEscape(p.category)}</span> · <i class="fas fa-earth-asia"></i></span>
+                </div>
+                <button class="fb-post-more" type="button" aria-label="Tùy chọn"><i class="fas fa-ellipsis"></i></button>
+            </div>
+
+            <div class="fb-post-text">
+                <a class="fb-post-title" href="${url}">${fbEscape(p.title)}</a>
+                <p>${fbEscape(p.excerpt)}</p>
+            </div>
+            ${media}
+
+            <div class="fb-post-stats">
+                <span class="fb-react-icons"><i class="fb-r fb-r-like">👍</i><i class="fb-r fb-r-love">❤️</i><i class="fb-r fb-r-haha">😆</i></span>
+                <span class="fb-stats-count">${eng.likes.toLocaleString("vi-VN")}</span>
+                <span class="fb-stats-right">${eng.comments} bình luận · ${eng.shares} lượt chia sẻ</span>
+            </div>
+
+            <div class="fb-post-actions">
+                <button class="fb-act fb-act-like" type="button"><i class="far fa-thumbs-up"></i> Thích</button>
+                <a class="fb-act" href="${url}"><i class="far fa-comment"></i> Bình luận</a>
+                <a class="fb-act fb-act-read" href="${url}"><i class="far fa-newspaper"></i> Đọc bài</a>
+                <button class="fb-act fb-act-share" type="button"><i class="far fa-share-square"></i> Chia sẻ</button>
+            </div>
+        </article>`;
+}
+
+// Bật/tắt "Thích" (hiệu ứng client-side, áp dụng mọi trang có feed)
+document.addEventListener("click", e => {
+    const likeBtn = e.target.closest(".fb-act-like");
+    if (!likeBtn) return;
+    likeBtn.classList.toggle("liked");
+    likeBtn.innerHTML = likeBtn.classList.contains("liked")
+        ? '<i class="fas fa-thumbs-up"></i> Đã thích'
+        : '<i class="far fa-thumbs-up"></i> Thích';
+});

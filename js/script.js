@@ -96,35 +96,11 @@ function renderLatestPosts() {
     const wrap = document.getElementById("latestPosts");
     if (!wrap || typeof BLOG_POSTS === "undefined" || !Array.isArray(BLOG_POSTS)) return;
 
-    const esc = str => String(str).replace(/[&<>"']/g, s => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-    }[s]));
-    const fmt = iso => {
-        const d = new Date(iso);
-        return isNaN(d) ? iso : d.toLocaleDateString("vi-VN", { day: "2-digit", month: "long", year: "numeric" });
-    };
-
     const posts = [...BLOG_POSTS]
         .sort((a, b) => new Date(b.date) - new Date(a.date))
         .slice(0, 3);
 
-    wrap.innerHTML = posts.map(p => `
-        <a class="blog-card" href="post.html?id=${encodeURIComponent(p.id)}">
-            <div class="blog-card-thumb">
-                <img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">
-                <span class="tag tag-active">${esc(p.category)}</span>
-            </div>
-            <div class="blog-card-body">
-                <div class="blog-card-meta">
-                    <span><i class="fas fa-calendar-day"></i> ${fmt(p.date)}</span>
-                    <span><i class="fas fa-user-pen"></i> ${esc(p.author || "Phạm Lê Tân")}</span>
-                </div>
-                <h3>${esc(p.title)}</h3>
-                <p>${esc(p.excerpt)}</p>
-                <span class="blog-card-more">Đọc tiếp <i class="fas fa-arrow-right"></i></span>
-            </div>
-        </a>
-    `).join("");
+    wrap.innerHTML = posts.map(p => renderFbFeedCard(p)).join("");
 }
 
 console.log("Phạm Lê Tân Portfolio v2026 Loaded!");
