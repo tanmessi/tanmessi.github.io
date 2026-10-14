@@ -18,6 +18,62 @@
 
 const BLOG_POSTS = [
     {
+        id: "nen-tang-quan-tri-chinh-quyen-co-so",
+        title: "Nền tảng quản trị chính quyền cơ sở: Hạ tầng số cho cấp xã, phường",
+        category: "Chuyển đổi số",
+        date: "2026-07-10",
+        author: "Phạm Lê Tân",
+        image: "assets/img/anh5.png",
+        excerpt: "Chính quyền cấp cơ sở là nơi tiếp xúc trực tiếp với người dân. Một nền tảng quản trị số hợp nhất sẽ giúp điều hành minh bạch, nhanh chóng và gần dân hơn.",
+        content: `
+            <p>Chính quyền cấp cơ sở (xã, phường, thị trấn) là tuyến đầu trong việc phục vụ người dân. Tuy nhiên, đây cũng là nơi còn nhiều quy trình thủ công, dữ liệu phân tán và thiếu công cụ điều hành tập trung.</p>
+
+            <h2>Vì sao cần một nền tảng hợp nhất?</h2>
+            <p>Thay vì nhiều phần mềm rời rạc, một nền tảng quản trị chính quyền cơ sở hợp nhất các nghiệp vụ cốt lõi trên cùng một hệ thống, giúp cán bộ làm việc hiệu quả và lãnh đạo nắm bắt toàn cảnh.</p>
+
+            <h2>Các cấu phần trọng tâm</h2>
+            <ul>
+                <li>Quản lý dân cư, hộ tịch và dữ liệu địa bàn tập trung.</li>
+                <li>Điều hành tác nghiệp, giao việc và theo dõi tiến độ xử lý.</li>
+                <li>Kênh tương tác hai chiều với người dân (phản ánh, kiến nghị, thông báo).</li>
+                <li>Báo cáo, thống kê phục vụ ra quyết định.</li>
+            </ul>
+
+            <blockquote>"Chính quyền số không chỉ là số hóa giấy tờ, mà là thay đổi cách phục vụ người dân."</blockquote>
+
+            <h2>Giá trị mang lại</h2>
+            <p>Khi dữ liệu được liên thông và quy trình được chuẩn hóa, thời gian xử lý rút ngắn, tính minh bạch tăng lên và người dân được phục vụ tốt hơn — đó là mục tiêu cuối cùng của chính quyền số cấp cơ sở.</p>
+        `
+    },
+    {
+        id: "dao-tao-chuyen-doi-so-ai-cho-to-chuc",
+        title: "Đào tạo chuyển đổi số & AI cho tổ chức: Bắt đầu từ con người",
+        category: "Chuyển đổi số",
+        date: "2026-07-08",
+        author: "Phạm Lê Tân",
+        image: "assets/img/anh4.png",
+        excerpt: "Công nghệ chỉ phát huy giá trị khi con người biết sử dụng. Đào tạo năng lực số và tư duy ứng dụng AI là bước nền tảng cho mọi hành trình chuyển đổi số.",
+        content: `
+            <p>Nhiều tổ chức đầu tư mạnh vào phần mềm nhưng lại bỏ quên yếu tố quan trọng nhất: con người. Chuyển đổi số thất bại thường không phải vì công nghệ yếu, mà vì đội ngũ chưa sẵn sàng.</p>
+
+            <h2>Đào tạo năng lực số cho đội ngũ</h2>
+            <p>Một chương trình đào tạo hiệu quả cần đi từ tư duy đến kỹ năng thực hành, phù hợp với từng nhóm đối tượng trong tổ chức:</p>
+            <ul>
+                <li>Nhận thức về chuyển đổi số và vai trò của từng cá nhân.</li>
+                <li>Kỹ năng sử dụng công cụ số trong công việc hằng ngày.</li>
+                <li>Tư duy dữ liệu và ra quyết định dựa trên số liệu.</li>
+            </ul>
+
+            <h2>Ứng dụng AI vào quy trình nghiệp vụ</h2>
+            <p>AI không thay thế con người, mà giúp con người làm việc nhanh hơn. Đào tạo cách ứng dụng AI vào soạn thảo, phân tích, tổng hợp và hỗ trợ ra quyết định sẽ tạo ra lợi thế rõ rệt cho tổ chức.</p>
+
+            <blockquote>"Chuyển đổi số bắt đầu từ việc thay đổi tư duy, không phải từ việc mua phần mềm."</blockquote>
+
+            <h2>Lộ trình bền vững</h2>
+            <p>Đào tạo nên được thiết kế theo lộ trình, đo lường được và gắn với mục tiêu cụ thể của tổ chức, để năng lực số thực sự trở thành văn hóa làm việc chứ không chỉ là một khóa học.</p>
+        `
+    },
+    {
         id: "bi-dashboard-ra-quyet-dinh",
         title: "BI Dashboard: Ra quyết định bằng dữ liệu thời gian thực",
         category: "Công nghệ",
